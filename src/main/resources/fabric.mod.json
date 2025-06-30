@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "quicmc",
+  "version": "${version}",
+  "name": "quicmc-fabric",
+  "description": "quic protocol support for Minecraft",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/quicmc/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "cn.tursom.quicmc.client.QuicmcDataGenerator"
+    ],
+    "client": [
+      "cn.tursom.quicmc.client.QuicmcClient"
+    ],
+    "main": [
+      "cn.tursom.quicmc.Quicmc"
+    ]
+  },
+  "mixins": [
+    "quicmc.mixins.json",
+    {
+      "config": "quicmc.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
